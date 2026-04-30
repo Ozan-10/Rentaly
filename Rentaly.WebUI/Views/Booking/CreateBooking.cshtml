@@ -1,0 +1,165 @@
+﻿@model Rentaly.EntityLayer.Entities.Booking
+
+@{
+    Layout = "~/Views/Shared/_RentalyLayout.cshtml";
+    ViewData["Title"] = "Rezervasyon";
+}
+
+<section id="subheader" class="jarallax text-light">
+    <img src="/rentaly/images/background/2.jpg" class="jarallax-img" alt="">
+    <div class="center-y relative text-center">
+        <div class="container">
+            <h1>Araç Rezervasyonu</h1>
+            <p>Seçtiğiniz araç için hızlı rezervasyon oluşturun</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- SOL KART -->
+            <div class="col-lg-5">
+                <div class="p-4 shadow rounded bg-white">
+
+                    <img src="/rentaly/images/cars/bmw-m5.jpg"
+                         class="img-fluid rounded mb-3"
+                         alt="Araç">
+
+                    <h3>Premium Araç</h3>
+                    <p class="text-muted mb-3">Konforlu ve güvenli sürüş deneyimi</p>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Günlük Ücret</span>
+                        <strong>7.500 ₺</strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Yakıt</span>
+                        <strong>Benzin</strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Vites</span>
+                        <strong>Otomatik</strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Kapasite</span>
+                        <strong>5 Kişi</strong>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between">
+                        <span>Toplam</span>
+                        <strong class="text-success" id="totalPrice">7.500 ₺</strong>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SAĞ FORM -->
+            <div class="col-lg-7">
+                <div class="p-4 shadow rounded bg-white">
+
+                    <h3 class="mb-4">Rezervasyon Formu</h3>
+
+                    <form method="post">
+
+                        <input type="hidden" asp-for="CarId" value="@ViewBag.carId" />
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label>Ad</label>
+                                <input type="text" asp-for="Name" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Soyad</label>
+                                <input type="text" asp-for="Surname" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>E-Posta</label>
+                                <input type="email" asp-for="Mail" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Telefon</label>
+                                <input type="text" asp-for="Phone" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Alış Yeri</label>
+                                <input type="text" asp-for="PickUpLocation" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Bırakış Yeri</label>
+                                <input type="text" asp-for="DropOffLocation" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Alış Tarihi</label>
+                                <input type="date" asp-for="PickUpDate" class="form-control" id="pickupDate" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label>Teslim Tarihi</label>
+                                <input type="date" asp-for="ReturnDate" class="form-control" id="returnDate" />
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <button class="btn btn-success w-100 py-3">
+                                    Rezervasyonu Tamamla
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const pickup = document.getElementById("pickupDate");
+        const ret = document.getElementById("returnDate");
+        const total = document.getElementById("totalPrice");
+
+        const dailyPrice = 7500;
+
+        function calculate() {
+
+            if (pickup.value && ret.value) {
+
+                let start = new Date(pickup.value);
+                let end = new Date(ret.value);
+
+                let diff = (end - start) / (1000 * 60 * 60 * 24);
+
+                if (diff > 0) {
+                    let sum = diff * dailyPrice;
+
+                    total.innerHTML =
+                        sum.toLocaleString('tr-TR') + " ₺";
+                }
+            }
+        }
+
+        pickup.addEventListener("change", calculate);
+        ret.addEventListener("change", calculate);
+
+    });
+</script>

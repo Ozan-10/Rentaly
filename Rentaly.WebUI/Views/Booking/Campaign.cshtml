@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Kampanya";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="py-5" style="background:#f8faf8; min-height:100vh;">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <div class="card border-0 shadow rounded-4 p-5">
+
+                    <div class="text-center mb-5">
+                        <div class="mb-4">
+
+                            <h5 class="text-success fw-bold">
+                                Merhaba Ozan Kuzulu,
+                            </h5>
+
+                            <p class="text-muted">
+                                Rezervasyon talebinizin başarıyla onaylandığını bildirmekten mutluluk duyarız.
+                                Araç kiralama detaylarınız aşağıdadır:
+                            </p>
+
+                        </div>
+                        <h1 class="text-success fw-bold">Rezervasyonunuz Onaylandı 🎉</h1>
+                        <p class="text-muted">
+                            Rezervasyon talebiniz başarıyla onaylandı.
+                        </p>
+                    </div>
+
+                    <div class="border rounded-4 p-4 mb-5">
+
+                        <h4 class="fw-bold mb-4">Kiralama Özeti</h4>
+
+                        <p><strong>Rezervasyon No:</strong> #12</p>
+                        <p><strong>Tarih:</strong> 20.04.2026 - 26.04.2026</p>
+                        <p><strong>Toplam Tutar:</strong> <span class="text-success fw-bold">30.000 ₺</span></p>
+                        <p><strong>Durum:</strong> <span class="badge bg-success">Onaylandı</span></p>
+
+                    </div>
+
+                    <div class="text-center mb-4">
+                        <a href="/Car/CarList" class="btn btn-success px-5 py-3 rounded-pill">
+                            HEMEN KİRALAMAYA BAŞLA
+                        </a>
+                    </div>
+
+                    <div class="border border-success rounded-4 p-5 text-center"
+                         style="background:#f3fff3;">
+
+                        <h2 class="text-success fw-bold mb-3">
+                            Size Özel Hediye!
+                        </h2>
+
+                        <p class="text-muted mb-4">
+                            Sonraki kiralamanızda geçerli %10 indirim sizi bekliyor.
+                        </p>
+
+                        <div class="border border-success rounded-4 p-4 d-inline-block mb-4"
+                             style="border-style:dashed !important; min-width:280px;">
+
+                            <div class="text-muted mb-2">Kodunuz:</div>
+
+                            <h1 class="text-success fw-bold">
+                                RENTALY10
+                            </h1>
+
+                        </div>
+
+                        <p class="small text-muted">
+                            Bu kod, sonraki kiralamanızda ödeme adımında kullanılabilir.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

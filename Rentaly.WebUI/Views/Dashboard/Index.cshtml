@@ -1,0 +1,249 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<style>
+    .stat-card {
+        border: none;
+        border-radius: 22px;
+        padding: 28px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s ease;
+        min-height: 160px;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+
+        .stat-card i {
+            position: absolute;
+            right: 25px;
+            bottom: 20px;
+            font-size: 45px;
+            opacity: .18;
+        }
+
+    .bg-purple {
+        background: linear-gradient(135deg,#6a11cb,#2575fc);
+    }
+
+    .bg-green {
+        background: linear-gradient(135deg,#00b09b,#96c93d);
+    }
+
+    .bg-orange {
+        background: linear-gradient(135deg,#ff8008,#ffc837);
+    }
+
+    .bg-red {
+        background: linear-gradient(135deg,#ff416c,#ff4b2b);
+    }
+
+    .dashboard-box {
+        background: white;
+        border-radius: 22px;
+        padding: 28px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    }
+
+    .activity-item {
+        padding: 14px 0;
+        border-bottom: 1px solid #f1f1f1;
+        font-weight: 500;
+    }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+    .quick-btn {
+        border-radius: 14px;
+        padding: 13px;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+        .quick-btn:hover {
+            transform: scale(1.03);
+        }
+
+    .progress {
+        height: 12px;
+        border-radius: 50px;
+    }
+
+    .table td, .table th {
+        vertical-align: middle;
+    }
+
+    body {
+        background: #f4f6f9;
+    }
+</style>
+
+<div class="container-fluid mt-4">
+
+    <!-- ÜST KARTLAR -->
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="stat-card bg-purple">
+                <p>Toplam Araç</p>
+                <h1 class="fw-bold">@ViewBag.totalCar</h1>
+                <small>Sistemde aktif araç</small>
+                <i class="fas fa-car"></i>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="stat-card bg-green">
+                <p>Rezervasyonlar</p>
+                <h1 class="fw-bold">@ViewBag.totalBooking</h1>
+                <small>Toplam sipariş</small>
+                <i class="fas fa-calendar-check"></i>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="stat-card bg-orange">
+                <p>Hakkımızda</p>
+                <h1 class="fw-bold">@ViewBag.aboutCount</h1>
+                <small>Bilgi içerikleri</small>
+                <i class="fas fa-info-circle"></i>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="stat-card bg-red">
+                <p>Süreçler</p>
+                <h1 class="fw-bold">@ViewBag.processCount</h1>
+                <small>Aktif süreç sayısı</small>
+                <i class="fas fa-cogs"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ORTA ALAN -->
+    <div class="row mt-4 g-4">
+
+        <div class="col-md-8">
+            <div class="dashboard-box">
+
+                <div class="d-flex justify-content-between mb-4">
+                    <h4 class="fw-bold">Son Hareketler</h4>
+                    <span class="text-muted">Bugün</span>
+                </div>
+
+                <div class="activity-item">✅ Yeni rezervasyon oluşturuldu</div>
+                <div class="activity-item">🚘 BMW M5 sisteme eklendi</div>
+                <div class="activity-item">🎁 Kampanya kodu aktif edildi</div>
+                <div class="activity-item">📄 404 sayfası güncellendi</div>
+                <div class="activity-item">👤 Yeni kullanıcı kaydı alındı</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="dashboard-box">
+
+                <h4 class="fw-bold mb-4">Hızlı Menü</h4>
+
+                <a href="/Car/CarList" class="btn btn-success w-100 quick-btn mb-3">
+                    🚘 Araçlar
+                </a>
+
+                <a href="/Booking/BookingList" class="btn btn-primary w-100 quick-btn mb-3">
+                    📅 Rezervasyonlar
+                </a>
+
+                <a href="/Brand/BrandList" class="btn btn-dark w-100 quick-btn mb-3">
+                    🏷️ Markalar
+                </a>
+
+                <a href="/Home/Index" class="btn btn-warning w-100 quick-btn">
+                    🌍 Siteye Git
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ALT ALAN -->
+    <div class="row mt-4 g-4">
+
+        <div class="col-md-8">
+            <div class="dashboard-box">
+
+                <h4 class="fw-bold mb-4">Son Rezervasyonlar</h4>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Araç</th>
+                            <th>Durum</th>
+                            <th>Tarih</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Ahmet Kaya</td>
+                            <td>BMW M5</td>
+                            <td><span class="badge bg-success">Onaylandı</span></td>
+                            <td>30.04.2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mehmet Demir</td>
+                            <td>Mercedes C200</td>
+                            <td><span class="badge bg-warning">Bekliyor</span></td>
+                            <td>30.04.2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ayşe Kurt</td>
+                            <td>Audi A6</td>
+                            <td><span class="badge bg-danger">İptal</span></td>
+                            <td>29.04.2026</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="dashboard-box">
+
+                <h4 class="fw-bold mb-4">Genel Performans</h4>
+
+                <p class="mb-2">Araç Doluluk</p>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-success" style="width:78%">78%</div>
+                </div>
+
+                <p class="mb-2">Rezervasyon Oranı</p>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-primary" style="width:65%">65%</div>
+                </div>
+
+                <p class="mb-2">Müşteri Memnuniyeti</p>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" style="width:92%">92%</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rentaly</title>
+
+    <link rel="stylesheet" href="~/rentaly/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/rentaly/css/plugins.css" />
+    <link rel="stylesheet" href="~/rentaly/css/style.css" />
+    <link rel="stylesheet" href="~/rentaly/css/coloring.css" />
+
+    <link rel="stylesheet" href="~/rentaly/fonts/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/rentaly/fonts/elegant_font/HTML_CSS/style.css" />
+    <link rel="stylesheet" href="~/rentaly/fonts/et-line-font/style.css" />
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- HEADER -->
+        <header class="transparent scroll-light has-topbar">
+
+            <div id="topbar" class="topbar-dark text-light">
+                <div class="container">
+                    <div class="topbar-left">
+                        <div class="topbar-widget">
+                            <a href="#"><i class="fa fa-phone"></i> +90 555 555 55 55</a>
+                        </div>
+
+                        <div class="topbar-widget">
+                            <a href="#"><i class="fa fa-envelope"></i> info@rentaly.com</a>
+                        </div>
+                    </div>
+
+                    <div class="topbar-right">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex">
+
+                            <div class="de-flex-col">
+                                <div id="logo">
+                                    <a href="/Home/Index">
+                                        <img class="logo-1" src="~/rentaly/images/logo-light.png" alt="">
+                                        <img class="logo-2" src="~/rentaly/images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a href="/Home/Index">Ana Sayfa</a></li>
+                                    <li><a href="/Car/CarList">Araçlar</a></li>
+                                    <li><a href="/Booking/CreateBooking">Rezervasyon</a></li>
+                                    <li><a href="/About/Index">Hakkımızda</a></li>
+                                    <li><a href="/Contact/Index">İletişim</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="/Login/Index" class="btn-main">Giriş Yap</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- CONTENT -->
+        @RenderBody()
+
+        <!-- FOOTER -->
+        <footer class="text-light">
+            <div class="container">
+                <div class="row g-custom-x">
+
+                    <div class="col-lg-4">
+                        <h5>Rentaly</h5>
+                        <p>
+                            Premium araç kiralama deneyimi.
+                            Güvenli, hızlı ve modern hizmet.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h5>Hızlı Menü</h5>
+                        <ul>
+                            <li><a href="/Home/Index">Ana Sayfa</a></li>
+                            <li><a href="/Car/CarList">Araçlar</a></li>
+                            <li><a href="/Booking/CreateBooking">Rezervasyon</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h5>İletişim</h5>
+                        <p>İstanbul / Türkiye</p>
+                        <p>info@rentaly.com</p>
+                        <p>+90 555 555 55 55</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="subfooter">
+                <div class="container">
+                    © 2026 Rentaly - Tüm Hakları Saklıdır
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="~/rentaly/js/jquery.min.js"></script>
+    <script src="~/rentaly/js/bootstrap.min.js"></script>
+    <script src="~/rentaly/js/plugins.js"></script>
+    <script src="~/rentaly/js/designesia.js"></script>
+
+</body>
+</html>

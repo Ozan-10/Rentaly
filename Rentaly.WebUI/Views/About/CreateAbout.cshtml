@@ -1,0 +1,24 @@
+﻿@model Rentaly.EntityLayer.Entities.About
+
+@{
+    ViewData["Title"] = "Create About";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Yeni About Ekle</h1>
+
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+    <br />
+
+    <label>Görsel Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+    <button class="btn btn-success">Kaydet</button>
+</form>

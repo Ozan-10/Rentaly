@@ -1,0 +1,48 @@
+﻿@model List<Rentaly.EntityLayer.Entities.About>
+
+@{
+    ViewData["Title"] = "About List";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>About Listesi</h1>
+
+<a href="/About/CreateAbout/" class="btn btn-primary">Yeni About Ekle</a>
+
+<th>Sil</th>
+<th>Güncelle</th>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Görsel</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutId</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.ImageUrl</td>
+        </tr>
+
+        <td>
+            <a href="/About/DeleteAbout/@item.AboutId" class="btn btn-danger">
+                Sil
+            </a>
+        </td>
+
+        <td>
+            <a href="/About/UpdateAbout/@item.AboutId" class="btn btn-warning">
+                Güncelle
+            </a>
+        </td>
+    }
+</table>

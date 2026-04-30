@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Rentaly</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/rentaly/images/favicon.png" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/rentaly/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/rentaly/css/animate.css" />
+    <link rel="stylesheet" href="~/rentaly/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/rentaly/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/rentaly/css/magnific-popup.css" />
+    <link rel="stylesheet" href="~/rentaly/css/flaticon.css" />
+    <link rel="stylesheet" href="~/rentaly/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/rentaly/css/style.css" />
+    <link rel="stylesheet" href="~/rentaly/css/responsive.css" />
+</head>
+
+<body>
+
+    <!-- Sayfa İçeriği -->
+    @RenderBody()
+
+    <!-- Scroll Top -->
+    <a href="#" class="scroll-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="~/rentaly/js/jquery.min.js"></script>
+    <script src="~/rentaly/js/bootstrap.bundle.min.js"></script>
+    <script src="~/rentaly/js/owl.carousel.min.js"></script>
+    <script src="~/rentaly/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/rentaly/js/wow.min.js"></script>
+    <script src="~/rentaly/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
