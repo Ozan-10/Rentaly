@@ -24,7 +24,8 @@
 
 <img width="650" height="857" alt="fotorezerve" src="https://github.com/user-attachments/assets/f7d4a29f-ee73-4e11-8047-7ca37aa8e856" />
 
-<img width="1676" height="912" alt="Ekran görüntüsü 2026-04-30 234810" src="https://github.com/user-attachments/assets/e9a74bd7-b2b7-497a-b3d9-a914e0ca07c2" />
+
+<img width="1691" height="930" alt="be9ca6a3-d260-42fe-be98-ada43abe94b0" src="https://github.com/user-attachments/assets/b29a6dca-1cad-4f66-b2a2-645b2190f88f" />
 
 <img width="1646" height="906" alt="sonrezervasyonlar" src="https://github.com/user-attachments/assets/a293137f-c7be-419e-9f8f-1efc2d3231e5" />
 
